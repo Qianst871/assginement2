@@ -1,0 +1,21 @@
+import unittest 
+from system_description import SystemDescription, componentDiagram, ClasstDiagram, Testplan
+
+class TestPlan(unittest.TestCase):
+    def test_system_description(self):
+        system_description = SystemDescription()
+        self.assertEqual(system_description.get_intelligent_management_system(),"智能管理系统")
+        self.assertEqual(system_description.get_distributed_system(),"分布式系统")
+        self.assertEqual(system_description.get_based_on_the_cloud_platform_and_it_adopts_a_mircroservice_framework_structure(),"基于云平台,用微服框架结构")
+        self.assertEqual(system_description.get_hardwire_requirements_and_software_requirements(),"硬件要求和软件要求")
+        self.assertEqual(system_description.get_usage_screnarios(),"使用场景")
+        self.assertTrue(system_description.check())
+        self.assertTrue(system_description.is_consistent())
+    
+    def test_component_diagram(self):
+        component_diagram = componentDiagram()
+        self.assertTrue(component_diagram.check())
+    
+    def test_class_diagram(self):
+        class_diagram = ClasstDiagram()
+        self.assertTrue(class_diagram.check())
