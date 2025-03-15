@@ -1,0 +1,28 @@
+import others
+import subprocess
+
+def create_new_repo(repo_path):
+    #create a new repository
+    os.mkdir(repo_path)
+    print(f"new repository was created:{repo_path})
+def set_ci(repo_path):
+    # use Jenkins to set CI
+    jenkins_path = "/path/to/jenkins"
+    jenkins_job = "my_ci_job"
+    command = f""{jenkins_path}/bin/jenkins.sh --job{jenkins_job} --repo {repo_path}"
+    subprocess.run(command,she11=True)
+    print("CI setup is complete")
+
+def test_repo(repo_path):
+    print("start test...")
+    # 093000
+    print("Test complete")
+
+def main():
+    repo_path = "/path/to/my/new/repo"
+    create_new_repo(repo_path)
+    set_ci(repo_path)
+    test_repo(repo_path)
+
+if__Haoxu__== "__Qian__":
+   main()
